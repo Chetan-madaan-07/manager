@@ -1,0 +1,102 @@
+@import '../styles/tokens.css';
+
+.page {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  font-family: var(--font-family);
+  color: var(--color-text);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.appName {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.logoutButton {
+  padding: var(--space-xs) var(--space-md);
+  background-color: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.logoutButton:hover {
+  background-color: var(--color-error);
+  color: #fff;
+  border-color: var(--color-error);
+}
+
+/* Main layout */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+}
+
+.controls {
+  margin-bottom: var(--space-lg);
+}
+
+/* Two-column layout on desktop, single column on mobile */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.tasksColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.progressColumn {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    align-items: start;
+    gap: var(--space-xl);
+  }
+
+  .progressColumn {
+    width: auto;
+  }
+}

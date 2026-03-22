@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+
+# Environment files (VERY IMPORTANT)
+.env
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build folders
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+# md files
+.kiro/
