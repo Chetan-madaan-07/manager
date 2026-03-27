@@ -19,8 +19,33 @@ export default function TaskList({ selectedDate, onTaskChanged }: TaskListProps)
   const { loading, error, byDate } = state.tasks;
   const today = localToday();
 
-  const tasks = byDate[selectedDate] ?? [];
+  // Grab the tasks for the day, or an empty array
+  const rawTasks = byDate[selectedDate] ?? [];
   const isReadOnly = selectedDate < today;
+
+  // --- NEW: Multi-level Sorting Logic ---
+  const priorityWeight = { high: 3, medium: 2, low: 1 };
+  
+  const tasks = [...rawTasks].sort((a, b) => {
+    // 1. Sort by Priority (High -> Medium -> Low)
+    const weightA = priorityWeight[a.priority || 'medium'];
+    const weightB = priorityWeight[b.priority || 'medium'];
+    if (weightA !== weightB) {
+      return weightB - weightA; 
+    }
+
+    // 2. Sort by Time (Earlier -> Later)
+    if (a.taskTime && b.taskTime) {
+      return a.taskTime.localeCompare(b.taskTime);
+    }
+    // If one has a time and the other doesn't, put the timed one first
+    if (a.taskTime && !b.taskTime) return -1;
+    if (!a.taskTime && b.taskTime) return 1;
+
+    // 3. First come, first serve (Fallback based on creation date)
+    return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+  });
+  // ---------------------------------------
 
   if (error) return <ErrorBanner message={error} />;
   if (loading && tasks.length === 0) return <LoadingSpinner />;

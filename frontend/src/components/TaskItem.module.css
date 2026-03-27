@@ -67,3 +67,91 @@
   opacity: 0.5;
   pointer-events: none;
 }
+
+/* --- NEW STYLES FOR BADGES AND METADATA --- */
+
+.contentWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metadata {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+}
+
+/* Priority Colors */
+.priorityHigh {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+.priorityMedium {
+  background-color: #fef3c7;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.priorityLow {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+}
+
+.timeText {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.description {
+  margin: 4px 0 0 0;
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.textCompleted {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.actionButtons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.editBtn {
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.editBtn:hover {
+  background-color: #f1f5f9;
+  color: #3b82f6; /* Blue for edit */
+}

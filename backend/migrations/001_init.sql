@@ -17,6 +17,9 @@ CREATE TABLE tasks (
   id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id    UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   title      TEXT NOT NULL CHECK (char_length(title) BETWEEN 1 AND 255),
+  description TEXT,                                                               -- NEW
+  task_time  TIME,                                                                -- NEW
+  priority   TEXT NOT NULL DEFAULT 'medium' CHECK (priority IN ('low', 'medium', 'high')), -- NEW
   completed  BOOLEAN NOT NULL DEFAULT false,
   task_date  DATE NOT NULL,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()

@@ -27,7 +27,6 @@ export default function DateSelector({ onDateChange }: DateSelectorProps) {
         type="date"
         className={styles.input}
         value={selectedDate}
-        max={today}
         onChange={handleChange}
       />
     </div>

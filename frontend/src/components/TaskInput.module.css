@@ -1,62 +1,28 @@
-.form {
+.container {
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 12px;
 }
 
-.label {
-  font-size: var(--font-size-sm);
-  font-weight: 500;
-  color: var(--color-text);
-}
-
-.row {
-  display: flex;
-  gap: var(--space-sm);
-}
-
-.input {
-  flex: 1;
-  padding: var(--space-sm) var(--space-md);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-md);
-  font-family: var(--font-family);
-  color: var(--color-text);
-  background-color: var(--color-surface);
-  box-shadow: var(--shadow-sm);
-}
-
-.input:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
-.button {
-  padding: var(--space-sm) var(--space-md);
-  background-color: var(--color-primary);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-md);
-  font-family: var(--font-family);
-  font-weight: 500;
+.openModalButton {
+  width: 100%;
+  padding: 16px;
+  background-color: #f8fafc; /* Light gray/blue */
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  white-space: nowrap;
-  box-shadow: var(--shadow-sm);
-  transition: background-color 0.15s;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.button:hover:not(:disabled) {
-  background-color: var(--color-primary-hover);
-}
-
-.button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.button:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+.openModalButton:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+  color: #475569;
 }
